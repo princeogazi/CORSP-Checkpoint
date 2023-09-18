@@ -1,0 +1,23 @@
+ALGORITHM corsp_checkpoint
+
+def is_palindrome(word):
+    # Convert the word to lowercase and remove spaces
+    word = word.lower().replace(" ", "")
+    
+    # Base case: an empty word or a word with a single character is a palindrome
+    if len(word) <= 1:
+        return True
+    
+    # Compare the characters at the ends of the word
+    if word[0] == word[-1]:
+        # Recursively check the rest of the word
+        return is_palindrome(word[1:-1])
+    else:
+        return False
+
+# Test cases
+write(is_palindrome("gag"))        # True
+Write(is_palindrome("kayak"))      # True
+Write(is_palindrome("php"))        # True
+Write(is_palindrome("radar"))      # True
+Write(is_palindrome("Palindrome")) # False
